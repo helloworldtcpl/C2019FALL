@@ -131,7 +131,7 @@ int BinomialCoefficient(int n, int k) {
 
 
 ***
-1.
+8.
 ```c
 int is_sorted(int arr[], int left, int right) {
 	for ( ; left < right; ++left)
@@ -143,7 +143,7 @@ int is_sorted(int arr[], int left, int right) {
 注意是非降序
 
 ***
-2.
+9.
 ```c
 void swap(int arr[], int i, int j) {
 	int temp = arr[i];
@@ -162,7 +162,7 @@ void BubbleSort(int arr[], int left, int right) {
 ```
 
 ***
-3.
+10.
 递归版本
 ```c
 int binary_search_recursive(int arr[], int left, int right, int query) {
@@ -202,7 +202,7 @@ int binary_search_iterative(int arr[], int left, int right, int query) {
 另外，须注意，这种二分查找的实现仅适用于当数组arr是严格升序时的情形。
 
 ***
-4.
+11.
 ```c
 void InsertionSort(int arr[], int left, int right) {
 	int i, j, temp;
@@ -217,7 +217,7 @@ void InsertionSort(int arr[], int left, int right) {
 注意，这种插入排序的实现，在寻找插入位置时是线性查找。所以，我们也可以使用二分查找的方法来寻找插入位置，这是对插入排序的一个优化方式。
 
 ***
-5.
+12.
 ```c
 void SelectionSort(int arr[], int left, int right) {
 	int i, j, minIdx;
@@ -230,10 +230,10 @@ void SelectionSort(int arr[], int left, int right) {
 	}
 }
 ```
-swap同第2题。
+swap同第9题。
 
 ***
-6.
+13.
 ```c
 void k_reverse(char* str, int k) {
 	int len = strlen(str);
@@ -252,7 +252,7 @@ void k_reverse(char* str, int k) {
 最后不足 k 个的字符不用反转
 
 ***
-7.
+14.
 ```c
 #include <stdio.h>
 #include <string.h>
@@ -298,7 +298,7 @@ int main() {
 ```
 
 ***
-8.
+15.
 ```c
 #include <stdio.h>
 #define N 25
@@ -325,7 +325,7 @@ int main() {
 for循环的每一次迭代填充矩阵的一整圈，其中，i用来控制圈数。
 
 ***
-10.
+17.
 ```c
 int my_strlen(const char* str) {
 	if (str == NULL)
@@ -337,7 +337,7 @@ int my_strlen(const char* str) {
 ```
 
 ***
-11.
+18.
 ```c
 void my_strcpy(char* dest, const char* src) {
 	assert(dest != NULL);
@@ -349,7 +349,7 @@ void my_strcpy(char* dest, const char* src) {
 ```
 
 ***
-12.
+19.
 ```c
 int my_strcmp(const char* str1, const char* str2) {
 	assert(str1 != NULL);
@@ -366,7 +366,7 @@ int my_strcmp(const char* str1, const char* str2) {
 ```
 
 ***
-13.
+20.
 ```c
 #include<stdio.h>
 #include<string.h>
@@ -408,7 +408,7 @@ int main() {
 ```
 
 ***
-15.
+21.
 ```c
 #include <stdio.h>
 int main(int argc, char* argv[]) {
@@ -433,7 +433,7 @@ int main(int argc, char* argv[]) {
 ```
 
 ***
-16.
+22.
 ```c
 #include <stdio.h>
 int main(int argc, char* argv[]) {
@@ -463,7 +463,7 @@ int main(int argc, char* argv[]) {
 ```
 
 ***
-1.
+23.
 ```c
 #include <stdio.h>
 long long sum(long long i) {
@@ -496,7 +496,7 @@ int main() {
 
 代码中的函数sum是完成一次上述的过程。
 ***
-2.
+24.
 ```c
 int bin_insert(int n, int m, int j, int i) {
 	m <<= j;
@@ -505,7 +505,7 @@ int bin_insert(int n, int m, int j, int i) {
 }
 ```
 ***
-3.
+25.
 ```c
 int sum(int n) {
 	n && (n += sum(n - 1));
@@ -514,7 +514,7 @@ int sum(int n) {
 ```
 这里用到了短路求值
 ***
-4.
+26.
 ```c
 int add(int n1, int n2) {
 	if (n2 > 0) {
@@ -528,7 +528,7 @@ int add(int n1, int n2) {
 }
 ```
 ***
-5.
+27.
 ```c
 int find(const char* str, const char* substr) {
 	int i, j, k;
@@ -543,11 +543,9 @@ int find(const char* str, const char* substr) {
 ```
 原题中函数名为substr，与该函数的第二个形参命名相同，虽未发生命名冲突，但这其实不是一个很好的习惯。我在出题时疏忽了，特此将该函数名更正find。即在主串str中查找字串substr，并返回其第一次出现的位置；若为查找到，则返回-1。
 
-这是一道字符串匹配题。我在此处用的是普通的匹配方式，即试探所有的情况。此题另有更好的做法，叫做KMP算法。感兴趣的同学可以参考
-[百度百科](https://baike.baidu.com/item/KMP/10158450?fr=aladdin)
-或[维基百科](https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm)
+这是一道字符串匹配题。我在此处用的是普通的匹配方式，即试探所有的情况。此题另有更好的做法，叫做KMP算法。
 ***
-6.
+28.
 ```c
 int count_substr(const char* str, const char* substr) {
 	int i, j, k;
@@ -566,7 +564,7 @@ int count_substr(const char* str, const char* substr) {
 ```
 可以使用更好的KMP算法
 ***
-7.
+29.
 ```c
 void Merge(int arr[], int left, int mid, int right) {
 	int size = right - left + 1;
@@ -617,12 +615,11 @@ int temparr[right – left + 1];
 for (i = left, k = 0; i <= right; ++i)
 	arr[i++] = temparr[k++];
 ```
-memcpy的使用方法可以参考[百度百科](https://baike.baidu.com/item/memcpy/659918?fr=aladdin)
-或[cppreference](http://en.cppreference.com/w/c/string/byte/memcpy)
+memcpy的使用方法可以参考[百度百科](https://baike.baidu.com/item/memcpy/659918?fr=aladdin)。
 
 
-
-1. 
+***
+32. 
 ```c
 struct Node* construct(int arr[], int size) {
 	int i;
@@ -641,7 +638,7 @@ struct Node* construct(int arr[], int size) {
 }
 ```
 ***
-2. 
+33. 
 ```c
 struct Node* insert_to_head(struct Node* head, int val) {
 	struct Node* newhead = (struct Node* )malloc(sizeof(struct Node));
@@ -651,7 +648,7 @@ struct Node* insert_to_head(struct Node* head, int val) {
 }
 ```
 ***
-3.
+34.
 ```c
 struct Node* insert_to_tail(struct Node* head, int val) {
 	struct Node* tail = (struct Node* )malloc(sizeof(struct Node));
@@ -666,7 +663,7 @@ struct Node* insert_to_tail(struct Node* head, int val) {
 }
 ```
 ***
-4.
+35.
 ```c
 struct Node* insert(struct Node* head, int val) {
 	struct Node* node = (struct Node* )malloc(sizeof(struct Node));
@@ -688,7 +685,7 @@ struct Node* insert(struct Node* head, int val) {
 }
 ```
 ***
-5. 
+36. 
 ```c
 struct Node* delete_node(struct Node* head, struct Node* target) {
 	struct Node* prev = NULL;
@@ -712,7 +709,7 @@ struct Node* delete_node(struct Node* head, struct Node* target) {
 }
 ```
 ***
-6.
+37.
 ```c
 struct Node* delete_val(struct Node* head, int val) {
 	struct Node* prev = NULL;
@@ -738,7 +735,7 @@ struct Node* delete_val(struct Node* head, int val) {
 }
 ```
 ***
-7.
+38.
 ```c
 struct Node* reverse(struct Node* head) {
 	struct Node* prev = NULL;
@@ -754,7 +751,7 @@ struct Node* reverse(struct Node* head) {
 }
 ```
 ***
-8.
+39.
 ```c
 struct Node* merge(struct Node* head1, struct Node* head2) {
 	struct Node *p1 = head1, *p2 = head2;
@@ -795,7 +792,7 @@ struct Node* merge(struct Node* head1, struct Node* head2) {
 }
 ```
 ***
-9.
+40.
 ```c
 void clear(struct Node* head) {
 	struct Node* p;
@@ -807,7 +804,7 @@ void clear(struct Node* head) {
 }
 ```
 ***
-10.
+40.
 ```c
 int Merge(int arr[], int left, int mid, int right) {
 	int size = right - left + 1;
