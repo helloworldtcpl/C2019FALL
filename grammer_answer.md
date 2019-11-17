@@ -36,7 +36,7 @@ ip = 0; // the int 0 converted to a null pointer of type int *
 
 （4） 在函数调用时，所传递的参数也可能发生隐式类型转换。
 
-如何转换* 
+* 如何转换：
 
 （1） 算术转换
 
