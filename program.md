@@ -152,7 +152,6 @@ void SelectionSort(int arr[], int left, int right);
 （注：程序命名为12.c）
 
 
-以上五题很重要，请熟练掌握。
 
 ***
 13. 写一个函数，函数声明如下：
