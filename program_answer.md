@@ -1,11 +1,17 @@
+编程题答案
+
+
+***
 1.
 略
 
 
+***
 2.
 略
 
 
+***
 3.
 ```c
 #include <stdio.h>
@@ -31,6 +37,7 @@ int main() {
 但需要注意一点，1≤N≤1000，当N稍大时，f(N)会超出int所能表示的范围，而这也正是题目中要求输出走法数目对100007取余后的结果的原因。所以我们不能直接求出f(N)后，再对100007取余；而应当在迭代的过程中就做取余的运算。而取余具有如下的性质： `(a+b) % c =((a % c)+(b % c)) % c`
 
 
+***
 4.
 ```c
 #include <stdio.h>
@@ -54,6 +61,7 @@ int main() {
 此题类似与第3题，但又是对第3题的扩展。同样，设走上第N级台阶的走法数为f(N)。我们知道，走上第N级台阶只有K种可能：从第N−1级台阶跨1级，从第N−2级台阶跨2级，…，从第N−K级台阶跨K级。那么很容易得出： `f(N)=Σf(N−i)，1<=i<=K`
 
 
+***
 5.
 ```c
 #include <stdio.h>
@@ -73,6 +81,7 @@ int main() {
 设f(n)为2n个原盘从A柱移动到C柱所需的最小移动次数。这个过程可分为三步：首先，将A柱上面的2(n−1)个原盘从A柱移动到B柱，这一步所需的最小移动次数为f(n−1)；然后，将A柱下面剩余的2个原盘依次移动到C柱，这一步所需要的最小移动次数为2；最后，将B柱的2(n−1)个原盘从B柱移动到C柱，这一步所需的最小移动次数为f(n−1)。故，可推出： `f(n)=2f(n−1)+2`
 
 
+***
 6.
 ```c
 #include <stdio.h>
@@ -106,6 +115,7 @@ int main() {
 我在移动的过程中顺便求了所需的步骤数。也可以根据递推公式，直接算出步骤数： `f(n)=3f(n−1)+2`
 
 
+***
 7.
 ```c
 int BinomialCoefficient(int n, int k) {
@@ -122,6 +132,7 @@ int BinomialCoefficient(int n, int k) {
 在宏观上把握递归的思想，会更容易理解递归。
 
 
+***
 1.
 ```c
 int is_sorted(int arr[], int left, int right) {
@@ -133,6 +144,7 @@ int is_sorted(int arr[], int left, int right) {
 ```
 注意是非降序
 
+***
 2.
 ```c
 void swap(int arr[], int i, int j) {
@@ -151,6 +163,7 @@ void BubbleSort(int arr[], int left, int right) {
 }
 ```
 
+***
 3.
 递归版本
 ```c
@@ -190,6 +203,7 @@ int binary_search_iterative(int arr[], int left, int right, int query) {
 这样做是为了避免left + right的整型溢出风险。
 另外，须注意，这种二分查找的实现仅适用于当数组arr是严格升序时的情形。
 
+***
 4.
 ```c
 void InsertionSort(int arr[], int left, int right) {
@@ -204,6 +218,7 @@ void InsertionSort(int arr[], int left, int right) {
 ```
 注意，这种插入排序的实现，在寻找插入位置时是线性查找。所以，我们也可以使用二分查找的方法来寻找插入位置，这是对插入排序的一个优化方式。
 
+***
 5.
 ```c
 void SelectionSort(int arr[], int left, int right) {
@@ -219,6 +234,7 @@ void SelectionSort(int arr[], int left, int right) {
 ```
 swap同第2题。
 
+***
 6.
 ```c
 void k_reverse(char* str, int k) {
@@ -237,6 +253,7 @@ void k_reverse(char* str, int k) {
 ```
 最后不足 k 个的字符不用反转
 
+***
 7.
 ```c
 #include <stdio.h>
@@ -282,6 +299,7 @@ int main() {
 }
 ```
 
+***
 8.
 ```c
 #include <stdio.h>
@@ -308,6 +326,7 @@ int main() {
 ```
 for循环的每一次迭代填充矩阵的一整圈，其中，i用来控制圈数。
 
+***
 10.
 ```c
 int my_strlen(const char* str) {
@@ -319,6 +338,7 @@ int my_strlen(const char* str) {
 }
 ```
 
+***
 11.
 ```c
 void my_strcpy(char* dest, const char* src) {
@@ -330,6 +350,7 @@ void my_strcpy(char* dest, const char* src) {
 }
 ```
 
+***
 12.
 ```c
 int my_strcmp(const char* str1, const char* str2) {
@@ -346,6 +367,7 @@ int my_strcmp(const char* str1, const char* str2) {
 }
 ```
 
+***
 13.
 ```c
 #include<stdio.h>
@@ -387,6 +409,7 @@ int main() {
 }
 ```
 
+***
 15.
 ```c
 #include <stdio.h>
@@ -411,6 +434,7 @@ int main(int argc, char* argv[]) {
 }
 ```
 
+***
 16.
 ```c
 #include <stdio.h>
@@ -440,6 +464,7 @@ int main(int argc, char* argv[]) {
 }
 ```
 
+***
 1.
 ```c
 #include <stdio.h>
