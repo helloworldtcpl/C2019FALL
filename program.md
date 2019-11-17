@@ -113,7 +113,6 @@ int BinomialCoefficient(int n, int k);
 
 
 ***
-排序和查找是程序设计中重要的内容。
 1. 写一个函数，函数声明如下：
 ```c
 int is_sorted(int arr[], int left, int right);
