@@ -1,0 +1,215 @@
+语法练习题
+
+要求：
+
+（1）对于以下几道语法练习题，请给出答案，并给出每一题对应的解释，写在一个文本文件中，命名为exercise.md，与c语言代码一起提交。
+
+（2）你应当通过肉眼观察即给出答案，而不能写程序运行以获得结果；当然，在你完成后，你可以写程序运行以验证你的答案。
+
+（3）语法练习题与编程题同样重要，请认真对待，并确保弄懂每一题。
+
+
+
+1. 执行C程序代码：
+```c
+int a = 1;
+int b = 0;
+int c = 0;
+int d = (++a) * (c = 1);
+```
+a，b，c，d的值分别为（）。
+
+2. 下面程序输出结果为（）。
+```c
+#include <stdio.h>
+#define SUB(X,Y) (X)*Y
+int main() {
+	int a = 3, b = 4;
+	printf("%d", SUB(a++, ++b));
+	return 0;
+}
+```
+
+3. 下列代码的输出结果是（）。
+```c
+int i = -1;
+unsigned j = 1;
+if (j > i)
+	printf("j > i");
+else
+	printf("i > j");
+```
+
+4. 下列代码的输出结果是（）。
+```c
+int a[5] = {1, 2, 3, 4, 5};
+int* ptr = (int *)(&a + 1);
+printf("%d, %d", *(a + 1), *(ptr - 1));
+```
+
+5. 下列代码的输出结果是（）。
+```c
+int arr[][3] = {10, 20, 30, 40, 50, 60};
+int (*p)[3];
+p = arr;
+printf("%d, %d, %d", p[0][0], *(p[0] + 1), (*p)[2]);
+```
+
+6. 下列代码的输出结果是（）。
+```c
+char str[] = "ABCD", *p = str;
+printf("%d", *(p + 4));
+```
+
+7. 设a、b、c、d、m、n均为int型变量，且a = 5、b = 6、c = 7、d = 8、m = 2、n = 2。则逻辑表达式`(m = a > b) && (n = c > d)`运算后，n的值为（）。
+
+8. 定义`char dog[] = "wang\0miao"`;那么`sizeof(dog)`与`strlen(dog)`分别是多少（）。
+
+9. 下列代码的输出结果是（）。
+```c
+unsigned char *p1;
+unsigned long *p2;
+p1 = (unsigned char *)0x801000;
+p2 = (unsigned long *)0x810000;
+printf("%p, %p", p1 + 5, p2 + 5);
+```
+
+10. 如下函数的func(1)值为（）。
+```c
+int func(int n) {
+	static int i = 1;
+	if (n >= 5)
+		return n;
+	n = n + i;
+	i++;
+	return func(n);
+}
+```
+
+
+
+
+
+
+
+***
+1. 若已有定义：```int a = 2, b = 3, c = 4；```则表达式```!(a + b) – c + 1 || c + b / 2```的值是（）。
+***
+2. 执行C程序代码,c,d的值分别为（）：
+```c
+int a = 1, b = 2;
+int c, d;
+c = (a & b) && a;
+d = (a && b) & a;
+```
+***
+3. 若有定义语句：```int year = 1009; *p = &year; ```以下不能使变量year中的值增至 1010的语句是（）。
+
+A. *p += 1;
+
+B. (*p)++;
+
+C. ++(*p);
+
+D. *p++;
+
+***
+4. 有一函数：
+```c
+int f(int x) {
+	return (( x > 2) ? x * f(x - 1) : 3);
+}
+```
+则f(f(2)的值为（）。
+***
+5. 有如下一段程序：
+```c
+int f1(float);
+int f2(char);
+int f3(float);
+int f4(float);
+int (*pf)(float);
+```
+则以下不合法的是:（）。
+
+A. int (*p)(float) = &f1;
+
+B. pf = &f4;
+
+C. pf = &f2;
+
+D. pf = f3;
+***
+6. 以下代码片段的输出结果为（）。
+```c
+char str[][10]={"China","Beijing"}, *p = str;
+printf("%s\n", p + 10);
+```
+***
+7. 有如下程序段：
+```c
+void GetMemeory(char *p) {
+	p = (char *)malloc(100);
+}
+void Test() {
+	char *str = NULL;
+	GetMemeory(str);
+	strcpy(str, "Thunder");
+	strcat(str + 2, "Downloader");
+	printf("%s", str);
+}
+```
+运行Test函数结果是（）。
+
+A. Thunder Downloader 
+
+B. under Downloader
+
+C. Thunderownloader
+
+D. 程序崩溃
+***
+8. 若有定义：
+```c
+typedef char T[10] ;
+T * a ;
+```
+上述定义中a的类型与下面选项中完全相同的是（）。
+
+A. char a [ 10 ] ;
+
+B. char ( *a) [ 10 ] ;
+
+C. char * a ;
+
+D. char *a [ 10 ] ;
+***
+9. 假定x = 65530，下面函数的返回值是（ ）。
+```c
+int func(x) {
+	int countx = 0;
+	while(x) {
+		countx++;
+		x = x & (x - 1);
+	}
+	return countx;
+}
+```
+***
+10. 下面这个程序执行后会有什么错误或者效果：
+```c
+#define MAX 255
+int main() {
+	unsigned char A[MAX], i;
+	for (i = 0; i <= MAX; ++i)
+		A[i] = i;
+}
+```
+A. 数组越界
+
+B. 死循环
+
+C. 栈溢出
+
+D. 内存泄漏
+
